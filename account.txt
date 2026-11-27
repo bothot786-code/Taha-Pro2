@@ -1,3 +1,128 @@
-....
-
-Paste Your FB JSON COOKIES ✅
+[
+    {
+        "key": "dbln",
+        "value": "%7B%2261596711487196%22%3A%22yUcRITgt%22%7D",
+        "domain": "facebook.com",
+        "path": "/login/device-based/",
+        "hostOnly": false,
+        "creation": "2026-11-27T08:33:31.332Z",
+        "lastAccessed": "2026-11-27T08:33:31.332Z"
+    },
+    {
+        "key": "datr",
+        "value": "cz_BauJtgF8TuhI3B2fm2Rr7",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2026-11-27T08:33:31.332Z",
+        "lastAccessed": "2026-11-27T08:33:31.332Z"
+    },
+    {
+        "key": "ps_l",
+        "value": "1",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2026-11-27T08:33:31.332Z",
+        "lastAccessed": "2026-11-27T08:33:31.332Z"
+    },
+    {
+        "key": "ps_n",
+        "value": "1",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2026-11-27T08:33:31.332Z",
+        "lastAccessed": "2026-11-27T08:33:31.332Z"
+    },
+    {
+        "key": "sb",
+        "value": "dD_Bapoafzj1-D62n-MdY1_L",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2026-11-27T08:33:31.332Z",
+        "lastAccessed": "2026-11-27T08:33:31.332Z"
+    },
+    {
+        "key": "wl_cbv",
+        "value": "v2%3Bclient_version%3A3338%3Btimestamp%3A1793184372",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2026-11-27T08:33:31.332Z",
+        "lastAccessed": "2026-11-27T08:33:31.332Z"
+    },
+    {
+        "key": "vpd",
+        "value": "v1%3B640x358x2.012500047683716",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2026-11-27T08:33:31.332Z",
+        "lastAccessed": "2026-11-27T08:33:31.332Z"
+    },
+    {
+        "key": "dpr",
+        "value": "2.012500047683716",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2026-11-27T08:33:31.332Z",
+        "lastAccessed": "2026-11-27T08:33:31.332Z"
+    },
+    {
+        "key": "locale",
+        "value": "en_GB",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2026-11-27T08:33:31.332Z",
+        "lastAccessed": "2026-11-27T08:33:31.332Z"
+    },
+    {
+        "key": "pas",
+        "value": "61594631294776%3AZVHrVk2kzu%2C61596312818557%3AjkJl57atNr%2C61596418511881%3AQqGiErm3zB%2C61596711487196%3AGSo54JUu8N%2C61596688330874%3A1kxq3MUQ46%2C61596846964818%3AsbNnGps7h8",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2026-11-27T08:33:31.332Z",
+        "lastAccessed": "2026-11-27T08:33:31.332Z"
+    },
+    {
+        "key": "wd",
+        "value": "852x1524",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2026-11-27T08:33:31.332Z",
+        "lastAccessed": "2026-11-27T08:33:31.332Z"
+    },
+    {
+        "key": "c_user",
+        "value": "61596570317222",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2026-11-27T08:33:31.332Z",
+        "lastAccessed": "2026-11-27T08:33:31.332Z"
+    },
+    {
+        "key": "fr",
+        "value": "13EOaZD6uUwjxut06.AWfepZRQ9b6pZtpQ-3jb7BDZLJOPU6a67sf2JQmSdy9h4KY8BNU.BrCUBY..AAA.0.0.BrCUBY.AWeqsALmtVfcbqicTP6z0U8y2mY",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2026-11-27T08:33:31.332Z",
+        "lastAccessed": "2026-11-27T08:33:31.332Z"
+    },
+    {
+        "key": "xs",
+        "value": "4%3Aoi90wmn0J6pu_Q%3A2%3A1795752248%3A-1%3A-1%3A%3AAc1Oi1ZBd2iykUJZQc59MfOiQ-27SGFMkZeAPD5bcw",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2026-11-27T08:33:31.332Z",
+        "lastAccessed": "2026-11-27T08:33:31.332Z"
+    }
+]
