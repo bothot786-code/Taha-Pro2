@@ -1,57 +1,71 @@
-const fs = require("fs-extra");
-const request = require("request");
+Cmd install owner.js const fs = require("fs-extra");
+const axios = require("axios");
 const path = require("path");
 
 module.exports = {
   config: {
     name: "owner",
-    version: "1.3.0",
-    author: "Mᴏʜᴀᴍᴍᴀᴅ Aᴋᴀsʜ",
+    aliases: ["info", "admin"],
+    version: "1.6.0",
+    author: "𝐓𝐀𝐇𝐀 𝐊𝐇𝐀𝐍",
     role: 0,
     shortDescription: "Owner information with image",
-    category: "Information",
+    category: "info",
     guide: {
-      en: "owner"
+      en: "{pn}"
     }
   },
 
-  onStart: async function ({ api, event }) {
+  onStart: async function ({ message }) {
     const ownerText = 
 `╭─ 👑 Oᴡɴᴇʀ Iɴғᴏ 👑 ─╮
-│ 👤 Nᴀᴍᴇ       : Mᴏʜᴀᴍᴍᴀᴅ Aᴋᴀsʜ
-│ 🧸 Nɪᴄᴋ       : Aᴋᴀsʜ
-│ 🎂 Aɢᴇ        : 18+
-│ 💘 Rᴇʟᴀᴛɪᴏɴ : Sɪɴɢʟᴇ
-│ 🎓 Pʀᴏғᴇssɪᴏɴ : Sᴛᴜᴅᴇɴᴛ
-│ 📚 Eᴅᴜᴄᴀᴛɪᴏɴ : Iɴᴛᴇʀ 2ɴᴅ Yᴇᴀʀ
-│ 🏡 Lᴏᴄᴀᴛɪᴏɴ : 𝐃𝐡𝐚𝐤𝐚 - 𝐆𝐚𝐳𝐢𝐩𝐮𝐫
+│ 👤 Nᴀᴍᴇ       : 𝐓𝐀𝐇𝐀 𝐊𝐇𝐀𝐍
+│ 🦋 Nɪᴄᴋ       : 𝐓𝐀𝐇𝐀 𝐊𝐇𝐀𝐍
+│ 🎂 Aɢᴇ        : 18
+│ 💘 Rᴇʟᴀᴛɪᴏɴ   : STFU
+│ 🎓 Pʀᴏғᴇssɪᴏɴ : 𝐉𝐎𝐁
+│ 📚 Eᴅᴜᴄᴀᴛɪᴏɴ  : 𝐆𝐎𝐕𝐄𝐓 𝐒𝐂𝐇𝐎𝐎𝐋
+│ 🏡 LᴏᴄᴀᴛɪᴏN   : 𝐋𝐀𝐇𝐎𝐑𝐄, 𝐏𝐀𝐊𝐈𝐒𝐓𝐀𝐍
 ├─ 🔗 Cᴏɴᴛᴀᴄᴛ ─╮
-│ 📘 Facebook  : fb.com/akashx404 
-│ 💬 Messenger: m.me/akashx404 
-│ 📞 WhatsApp  : wa.me/01933165880
+│ 📘 Facebook  : id=100075933317520
+│ 💬 Messenger : id=100075933317520
+│ 📞 WhatsApp  : +923474771404
 ╰────────────────╯`;
 
     const cacheDir = path.join(__dirname, "cache");
-    const imgPath = path.join(cacheDir, "owner.jpg");
+    await fs.ensureDir(cacheDir);
+    const imgPath = path.join(cacheDir, `owner_${Date.now()}.jpg`);
+    const imgLink = "https://i.imgur.com/1tUVG85.jpeg";
 
-    if (!fs.existsSync(cacheDir)) fs.mkdirSync(cacheDir);
+    try {
+      // Direct Buffer download (No stream issues)
+      const res = await axios.get(imgLink, {
+        responseType: "arraybuffer",
+        headers: {
+          "User-Agent": "Mozilla/5.0 (Windows NT 100.0; Win64; x64)"
+        }
+      });
 
-    const imgLink = "https://i.imgur.com/1G4ZhU7.jpeg";
+      // Write image to cache file synchronously
+      fs.writeFileSync(imgPath, Buffer.from(res.data, "binary"));
 
-    const send = () => {
-      api.sendMessage(
-        {
-          body: ownerText,
-          attachment: fs.createReadStream(imgPath)
-        },
-        event.threadID,
-        () => fs.unlinkSync(imgPath),
-        event.messageID
-      );
-    };
+      // Send message with image stream
+      await message.reply({
+        body: ownerText,
+        attachment: fs.createReadStream(imgPath)
+      });
 
-    request(encodeURI(imgLink))
-      .pipe(fs.createWriteStream(imgPath))
-      .on("close", send);
+    } catch (error) {
+      console.error("Owner Image Error:", error.message || error);
+      // Fallback: Agar image na mil paaye toh sirf text bhejo
+      return message.reply(ownerText);
+    } finally {
+      // Auto cleanup after sending
+      setTimeout(() => {
+        if (fs.existsSync(imgPath)) {
+          try { fs.unlinkSync(imgPath); } catch (e) {}
+        }
+      }, 5000);
+    }
   }
 };
